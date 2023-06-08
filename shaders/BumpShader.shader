@@ -1,5 +1,5 @@
 Shader "X-Ray/BumpShader" {
-Properties {
+Properties { 
     _Color ("Main Color", Color) = (1,1,1,1)
     _Parallax ("Height", Range (0.01, 0.08)) = 0.02
     _MainTex ("Base (RGB)", 2D) = "white" {}
