@@ -1,4 +1,17 @@
 *.meta
+/[Ll]evels/agroprom/
+/[Ll]evels/agroprom_underground/
+/[Ll]evels/limansk/
+/[Ll]evels/hospital/
+/[Ll]evels/escape/
+/[Ll]evels/marsh/
+/[Ll]evels/garbage/
+/[Ll]evels/yantar/
+/[Ll]evels/darkvalley/
+/[Ll]evels/stancia2/
+/[Ll]evels/red_forest/
+/[Ll]evels/military/
+/[Ll]evels/testlevels/
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
