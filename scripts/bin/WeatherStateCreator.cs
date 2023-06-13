@@ -12,10 +12,11 @@ public class State
     {
         [Header("Config WeatherState")]
         public float WHour;
-        public Cubemap SkyBox_Mat;
+        public Cubemap Cubemap_tex;
         public Vector3 sky_color;
         public Vector3 fog_color;
         public float fog_density;
         public Vector3 ambientColor;
         public Vector3 SunColor;
+        public FlareLayer flaresun;
     }

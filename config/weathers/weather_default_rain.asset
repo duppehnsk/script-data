@@ -12,4 +12,172 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9046bd128a9bc498ad0933f6b4b326, type: 3}
   m_Name: weather_default_rain
   m_EditorClassIdentifier: 
-  WeatherState: []
+  WeatherState:
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 0
+    SkyBox_Mat: {fileID: 0}
+    sky_color: {x: 0, y: 0, z: 0}
+    fog_color: {x: 0, y: 0, z: 0}
+    fog_density: 0
+    ambientColor: {x: 0, y: 0, z: 0}
+    SunColor: {x: 0, y: 0, z: 0}

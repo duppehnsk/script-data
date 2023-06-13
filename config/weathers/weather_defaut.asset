@@ -12,4 +12,172 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9046bd128a9bc498ad0933f6b4b326, type: 3}
   m_Name: weather_defaut
   m_EditorClassIdentifier: 
-  WeatherState: []
+  WeatherState:
+  - WHour: 0
+    Cubemap_tex: {fileID: 8900000, guid: a11425f52e46407478abb2cacc2e8db4, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.067, y: 0.067, z: 0.086}
+    fog_density: 0.9
+    ambientColor: {x: 0.0425, y: 0.045, z: 0.0475}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 1
+    Cubemap_tex: {fileID: 8900000, guid: ca375df41968f314fa6d98289e8d12ad, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.043, y: 0.043, z: 0.055}
+    fog_density: 0.9
+    ambientColor: {x: 0.0425, y: 0.045, z: 0.0475}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 2
+    Cubemap_tex: {fileID: 8900000, guid: a11425f52e46407478abb2cacc2e8db4, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.067, y: 0.067, z: 0.086}
+    fog_density: 0.9
+    ambientColor: {x: 0.0425, y: 0.045, z: 0.0475}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 3
+    Cubemap_tex: {fileID: 8900000, guid: 59254283f49e83a46a457b2e6f45d6c1, type: 3}
+    sky_color: {x: 0.25, y: 0.25, z: 0.25}
+    fog_color: {x: 0.067, y: 0.063, z: 0.055}
+    fog_density: 0.9
+    ambientColor: {x: 0.0525, y: 0.055, z: 0.0575}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 4
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 0.8, y: 0.8, z: 0.8}
+    fog_color: {x: 0.137, y: 0.141, z: 0.153}
+    fog_density: 0.9
+    ambientColor: {x: 0.06, y: 0.062, z: 0.065}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 5
+    Cubemap_tex: {fileID: 8900000, guid: 5085060f0232a544e842f0798dc90a3e, type: 3}
+    sky_color: {x: 0.8, y: 0.8, z: 0.8}
+    fog_color: {x: 0.271, y: 0.306, z: 0.361}
+    fog_density: 0.9
+    ambientColor: {x: 0.075, y: 0.0775, z: 0.08}
+    SunColor: {x: 0.7, y: 0.284, z: 0.096}
+  - WHour: 6
+    Cubemap_tex: {fileID: 8900000, guid: d336d3d31ded1af48a681f4fd77bd5e7, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.322, y: 0.302, z: 0.353}
+    fog_density: 0.9
+    ambientColor: {x: 0.08, y: 0.0825, z: 0.085}
+    SunColor: {x: 0.818, y: 0.476, z: 0.108}
+  - WHour: 7
+    Cubemap_tex: {fileID: 8900000, guid: 275a143527b96814c8392807ee76b270, type: 3}
+    sky_color: {x: 0.8, y: 0.8, z: 0.8}
+    fog_color: {x: 0.298, y: 0.29, z: 0.337}
+    fog_density: 0.9
+    ambientColor: {x: 0.0925, y: 0.095, z: 0.0975}
+    SunColor: {x: 0.435, y: 0.393, z: 0.289}
+  - WHour: 8
+    Cubemap_tex: {fileID: 8900000, guid: 87c515e0badc43945a33384504d62fdb, type: 3}
+    sky_color: {x: 0.8, y: 0.8, z: 0.8}
+    fog_color: {x: 0.255, y: 0.271, z: 0.337}
+    fog_density: 0.9
+    ambientColor: {x: 0.0775, y: 0.07, z: 0.0725}
+    SunColor: {x: 0.4325, y: 0.393, z: 0.289}
+  - WHour: 9
+    Cubemap_tex: {fileID: 8900000, guid: 56fd90ab9f8599d45bf4dfa9015b690f, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.478, y: 0.506, z: 0.545}
+    fog_density: 0.9
+    ambientColor: {x: 0.0775, y: 0.07, z: 0.0725}
+    SunColor: {x: 0.5, y: 0.47, z: 0.415}
+  - WHour: 10
+    Cubemap_tex: {fileID: 8900000, guid: abecabd7baf17b14c974992b21048b73, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.306, y: 0.302, z: 0.275}
+    fog_density: 0.9
+    ambientColor: {x: 0.0775, y: 0.07, z: 0.0725}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 11
+    Cubemap_tex: {fileID: 8900000, guid: 87c515e0badc43945a33384504d62fdb, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.333, y: 0.38, z: 0.451}
+    fog_density: 0.9
+    ambientColor: {x: 0.0763, y: 0.0806, z: 0.0884}
+    SunColor: {x: 0.506, y: 0.443, z: 0.302}
+  - WHour: 12
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.172, y: 0.176, z: 0.196}
+    fog_density: 0.9
+    ambientColor: {x: 0.0625, y: 0.065, z: 0.0675}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 13
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.172, y: 0.176, z: 0.196}
+    fog_density: 0.9
+    ambientColor: {x: 0.067, y: 0.069, z: 0.07}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 14
+    Cubemap_tex: {fileID: 8900000, guid: 56fd90ab9f8599d45bf4dfa9015b690f, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.478, y: 0.506, z: 0.545}
+    fog_density: 0.9
+    ambientColor: {x: 0.076, y: 0.0795, z: 0.0845}
+    SunColor: {x: 0.435, y: 0.393, z: 0.289}
+  - WHour: 15
+    Cubemap_tex: {fileID: 8900000, guid: e7e5b5e1b3a543f429486c633f2f398b, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.337, y: 0.357, z: 0.388}
+    fog_density: 0.9
+    ambientColor: {x: 0.0841, y: 0.0853, z: 0.0888}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 16
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.172, y: 0.176, z: 0.196}
+    fog_density: 0.9
+    ambientColor: {x: 0.0625, y: 0.065, z: 0.0675}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 17
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.172, y: 0.176, z: 0.196}
+    fog_density: 0.9
+    ambientColor: {x: 0.0725, y: 0.075, z: 0.0775}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 18
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.337, y: 0.376, z: 0.447}
+    fog_density: 0.9
+    ambientColor: {x: 0.0725, y: 0.075, z: 0.0775}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 19
+    Cubemap_tex: {fileID: 8900000, guid: 59254283f49e83a46a457b2e6f45d6c1, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.271, y: 0.251, z: 0.224}
+    fog_density: 0.9
+    ambientColor: {x: 0.0725, y: 0.075, z: 0.0775}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 20
+    Cubemap_tex: {fileID: 8900000, guid: 5085060f0232a544e842f0798dc90a3e, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.427, y: 0.412, z: 0.431}
+    fog_density: 0.9
+    ambientColor: {x: 0.07, y: 0.0725, z: 0.075}
+    SunColor: {x: 0.535, y: 0.493, z: 0.389}
+  - WHour: 21
+    Cubemap_tex: {fileID: 8900000, guid: bb653641b8f5a074d9e85bc9ce3aedb7, type: 3}
+    sky_color: {x: 1, y: 1, z: 1}
+    fog_color: {x: 0.333, y: 0.341, z: 0.431}
+    fog_density: 0.9
+    ambientColor: {x: 0.0625, y: 0.065, z: 0.0675}
+    SunColor: {x: 0.729, y: 0.308, z: 0.206}
+  - WHour: 22
+    Cubemap_tex: {fileID: 8900000, guid: bb653641b8f5a074d9e85bc9ce3aedb7, type: 3}
+    sky_color: {x: 0.5, y: 0.5, z: 0.5}
+    fog_color: {x: 0.165, y: 0.169, z: 0.212}
+    fog_density: 0.9
+    ambientColor: {x: 0.0625, y: 0.065, z: 0.0675}
+    SunColor: {x: 0, y: 0, z: 0}
+  - WHour: 23
+    Cubemap_tex: {fileID: 8900000, guid: dae44db21c2856148871ae928a1da760, type: 3}
+    sky_color: {x: 0.5, y: 0.5, z: 0.5}
+    fog_color: {x: 0.086, y: 0.086, z: 0.094}
+    fog_density: 0.9
+    ambientColor: {x: 0.0525, y: 0.055, z: 0.0575}
+    SunColor: {x: 0, y: 0, z: 0}
