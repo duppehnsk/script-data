@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class WeatherSystem : MonoBehaviour
 {
     [Header("Time")]
-    public int hours;
+    public int hours; //С‡Р°СЃРёРєРё
     public int minutes;
     [HideInInspector]
     public float seconds;
@@ -26,10 +26,10 @@ public class WeatherSystem : MonoBehaviour
 
     [Header("RainController")]
     public GameObject _rainobject;
-    private int RainGuarant = 50; // шанс гарантированного дождя по умолчанию
-    public int RainProcent; //каков шанс дождя при рандоме используется для уравнения с rainguarant;
-    public int RainDuration; // продолжительность дождика
-    private int RainDuration_backup; // резервная переменная, для нормальной работы таймеров
+    private int RainGuarant = 50; // ГёГ Г­Г± ГЈГ Г°Г Г­ГІГЁГ°Г®ГўГ Г­Г­Г®ГЈГ® Г¤Г®Г¦Г¤Гї ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
+    public int RainProcent; //ГЄГ ГЄГ®Гў ГёГ Г­Г± Г¤Г®Г¦Г¤Гї ГЇГ°ГЁ Г°Г Г­Г¤Г®Г¬ГҐ ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї Г¤Г«Гї ГіГ°Г ГўГ­ГҐГ­ГЁГї Г± rainguarant;
+    public int RainDuration; // ГЇГ°Г®Г¤Г®Г«Г¦ГЁГІГҐГ«ГјГ­Г®Г±ГІГј Г¤Г®Г¦Г¤ГЁГЄГ 
+    private int RainDuration_backup; // Г°ГҐГ§ГҐГ°ГўГ­Г Гї ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї, Г¤Г«Гї Г­Г®Г°Г¬Г Г«ГјГ­Г®Г© Г°Г ГЎГ®ГІГ» ГІГ Г©Г¬ГҐГ°Г®Гў
 
     public int startrainhour;
     private int startraintime;
@@ -54,10 +54,10 @@ public class WeatherSystem : MonoBehaviour
         RainLogic();
         UpdateSkyboxBlend();
     }
-    void StartWeatherSystem() //при старте мира - подгружаем и подставляем скайбоксы, цвета эмбиента, тумана, солнца соответствующие установленному времени
+    void StartWeatherSystem() //ГЇГ°ГЁ Г±ГІГ Г°ГІГҐ Г¬ГЁГ°Г  - ГЇГ®Г¤ГЈГ°ГіГ¦Г ГҐГ¬ ГЁ ГЇГ®Г¤Г±ГІГ ГўГ«ГїГҐГ¬ Г±ГЄГ Г©ГЎГ®ГЄГ±Г», Г¶ГўГҐГІГ  ГЅГ¬ГЎГЁГҐГ­ГІГ , ГІГіГ¬Г Г­Г , Г±Г®Г«Г­Г¶Г  Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГѕГ№ГЁГҐ ГіГ±ГІГ Г­Г®ГўГ«ГҐГ­Г­Г®Г¬Гі ГўГ°ГҐГ¬ГҐГ­ГЁ
     {
 
-        randomstate = UnityEngine.Random.Range(0, weatherStates.Length);// вытаскиваем случайную погоду
+        randomstate = UnityEngine.Random.Range(0, weatherStates.Length);// ГўГ»ГІГ Г±ГЄГЁГўГ ГҐГ¬ Г±Г«ГіГ·Г Г©Г­ГіГѕ ГЇГ®ГЈГ®Г¤Гі
         var newcubemap1 = weatherStates[randomstate].WeatherState[hours].Cubemap_tex;
         var newcubemap2 = weatherStates[randomstate].WeatherState[hours+1].Cubemap_tex;
         var suncolorstart = new Color((weatherStates[randomstate].WeatherState[hours].SunColor.x), (weatherStates[randomstate].WeatherState[hours].SunColor.y), (weatherStates[randomstate].WeatherState[hours].SunColor.z));
@@ -71,14 +71,14 @@ public class WeatherSystem : MonoBehaviour
         _sun.color = suncolorstart;
         RenderSettings.fogColor = fogcolorstart;
     }
-    void WeatherLogic() //стартуем логику погоды
+    void WeatherLogic() //Г±ГІГ Г°ГІГіГҐГ¬ Г«Г®ГЈГЁГЄГі ГЇГ®ГЈГ®Г¤Г»
     {
         for (int i = 0; i < weatherStates[randomstate].WeatherState.Count; i++)
         {
             if(hours == i && !hours_weather_event[i])
             {
-                StartBlendingWeather(); //начинаем люто месить погоду
-                hours_weather_event[i] = true; //чтобы не блендил много раз небо
+                StartBlendingWeather(); //Г­Г Г·ГЁГ­Г ГҐГ¬ Г«ГѕГІГ® Г¬ГҐГ±ГЁГІГј ГЇГ®ГЈГ®Г¤Гі
+                hours_weather_event[i] = true; //Г·ГІГ®ГЎГ» Г­ГҐ ГЎГ«ГҐГ­Г¤ГЁГ« Г¬Г­Г®ГЈГ® Г°Г Г§ Г­ГҐГЎГ®
             }
         }
     }
@@ -90,7 +90,7 @@ public class WeatherSystem : MonoBehaviour
         StartCoroutine(ChangeLightColors());
     }
 
-    IEnumerator ChangeLightColors() //люто начинаем месить цвета эмбиента, скайбокса, солнца и тумана
+    IEnumerator ChangeLightColors() //Г«ГѕГІГ® Г­Г Г·ГЁГ­Г ГҐГ¬ Г¬ГҐГ±ГЁГІГј Г¶ГўГҐГІГ  ГЅГ¬ГЎГЁГҐГ­ГІГ , Г±ГЄГ Г©ГЎГ®ГЄГ±Г , Г±Г®Г«Г­Г¶Г  ГЁ ГІГіГ¬Г Г­Г 
     {
         Color startColorSun = _sun.color;
         Color startColorFog = RenderSettings.fogColor;
@@ -103,22 +103,22 @@ public class WeatherSystem : MonoBehaviour
         Color targetColorSky = new Color((weatherStates[randomstate].WeatherState[hours].sky_color.x), (weatherStates[randomstate].WeatherState[hours].sky_color.y), (weatherStates[randomstate].WeatherState[hours].sky_color.z));
         while (elapsedTime < blendSpeedShader)
         {
-            // Вычислить текущий цвет, постепенно переходя от начального к целевому
+            // Г‚Г»Г·ГЁГ±Г«ГЁГІГј ГІГҐГЄГіГ№ГЁГ© Г¶ГўГҐГІ, ГЇГ®Г±ГІГҐГЇГҐГ­Г­Г® ГЇГҐГ°ГҐГµГ®Г¤Гї Г®ГІ Г­Г Г·Г Г«ГјГ­Г®ГЈГ® ГЄ Г¶ГҐГ«ГҐГўГ®Г¬Гі
             Color currentColorSun = Color.Lerp(startColorSun, targetColorSun, elapsedTime / blendSpeedShader);
             Color currentColorFog = Color.Lerp(startColorFog, targetColorFog, elapsedTime / blendSpeedShader);
             Color currentColorAmbient = Color.Lerp(startAmbientColor, targetColorAmbient, elapsedTime / blendSpeedShader);
             Color currentColorSky = Color.Lerp(startColorSky, targetColorSky, elapsedTime / blendSpeedShader);
-            // Применить текущий цвет к источнику света
+            // ГЏГ°ГЁГ¬ГҐГ­ГЁГІГј ГІГҐГЄГіГ№ГЁГ© Г¶ГўГҐГІ ГЄ ГЁГ±ГІГ®Г·Г­ГЁГЄГі Г±ГўГҐГІГ 
             _sun.color = currentColorSun;
             RenderSettings.fogColor = currentColorFog;
             RenderSettings.ambientSkyColor = currentColorAmbient;
             skyboxMaterial.SetColor("_Tint", currentColorSky);
-            // Увеличить прошедшее время
+            // Г“ГўГҐГ«ГЁГ·ГЁГІГј ГЇГ°Г®ГёГҐГ¤ГёГҐГҐ ГўГ°ГҐГ¬Гї
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Установить целевой цвет в качестве окончательного цвета
+        // Г“Г±ГІГ Г­Г®ГўГЁГІГј Г¶ГҐГ«ГҐГўГ®Г© Г¶ГўГҐГІ Гў ГЄГ Г·ГҐГ±ГІГўГҐ Г®ГЄГ®Г­Г·Г ГІГҐГ«ГјГ­Г®ГЈГ® Г¶ГўГҐГІГ 
         _sun.color = targetColorSun;
         RenderSettings.fogColor = targetColorFog;
         RenderSettings.fogDensity = 0.009f;
@@ -126,7 +126,7 @@ public class WeatherSystem : MonoBehaviour
         skyboxMaterial.SetColor("_Tint", targetColorSky);
     }
 
-    IEnumerator BlendSkybox() //крч тут расчеты пошли по отношению скорости смешивания
+    IEnumerator BlendSkybox() //ГЄГ°Г· ГІГіГІ Г°Г Г±Г·ГҐГІГ» ГЇГ®ГёГ«ГЁ ГЇГ® Г®ГІГ­Г®ГёГҐГ­ГЁГѕ Г±ГЄГ®Г°Г®Г±ГІГЁ Г±Г¬ГҐГёГЁГўГ Г­ГЁГї
     {
         float elapsedTime = 0f;
         float startBlendAmount = blendAmount;
@@ -142,15 +142,15 @@ public class WeatherSystem : MonoBehaviour
         blendAmount = targetBlendAmount;
         skyboxMaterial.SetFloat("_BlendAmount", blendAmount);
 
-        skyboxMaterial.SetTexture("_MainTex", weatherStates[randomstate].WeatherState[hours].Cubemap_tex); //заменили кубмапу которую получили в слот основной текстуры, чтобы не допустить скачка напряжения в небе
-        blendAmount = 0f;//обнулили для дальнейшего бленда
+        skyboxMaterial.SetTexture("_MainTex", weatherStates[randomstate].WeatherState[hours].Cubemap_tex); //Г§Г Г¬ГҐГ­ГЁГ«ГЁ ГЄГіГЎГ¬Г ГЇГі ГЄГ®ГІГ®Г°ГіГѕ ГЇГ®Г«ГіГ·ГЁГ«ГЁ Гў Г±Г«Г®ГІ Г®Г±Г­Г®ГўГ­Г®Г© ГІГҐГЄГ±ГІГіГ°Г», Г·ГІГ®ГЎГ» Г­ГҐ Г¤Г®ГЇГіГ±ГІГЁГІГј Г±ГЄГ Г·ГЄГ  Г­Г ГЇГ°ГїГ¦ГҐГ­ГЁГї Гў Г­ГҐГЎГҐ
+        blendAmount = 0f;//Г®ГЎГ­ГіГ«ГЁГ«ГЁ Г¤Г«Гї Г¤Г Г«ГјГ­ГҐГ©ГёГҐГЈГ® ГЎГ«ГҐГ­Г¤Г 
         skyboxMaterial.SetFloat("_BlendAmount", blendAmount);
-        skyboxMaterial.SetTexture("_BlendTex", weatherStates[randomstate].WeatherState[hours+1].Cubemap_tex); //подготовили новую текстуру неба для бленда
+        skyboxMaterial.SetTexture("_BlendTex", weatherStates[randomstate].WeatherState[hours+1].Cubemap_tex); //ГЇГ®Г¤ГЈГ®ГІГ®ГўГЁГ«ГЁ Г­Г®ГўГіГѕ ГІГҐГЄГ±ГІГіГ°Гі Г­ГҐГЎГ  Г¤Г«Гї ГЎГ«ГҐГ­Г¤Г 
     }
 
     void UpdateSkyboxBlend()
     {
-        skyboxMaterial.SetFloat("_BlendAmount", blendAmount);//просто обновляем параметр
+        skyboxMaterial.SetFloat("_BlendAmount", blendAmount);//ГЇГ°Г®Г±ГІГ® Г®ГЎГ­Г®ГўГ«ГїГҐГ¬ ГЇГ Г°Г Г¬ГҐГІГ°
     }
     void TimeManager()
     {
@@ -199,10 +199,10 @@ public class WeatherSystem : MonoBehaviour
     void NextDay()
     {
         PredRainLogic();
-        // Код для начала нового дня
+        // ГЉГ®Г¤ Г¤Г«Гї Г­Г Г·Г Г«Г  Г­Г®ГўГ®ГЈГ® Г¤Г­Гї
     }
 
-    void PredRainLogic()// стартовая логика для дождя на спавне.
+    void PredRainLogic()// Г±ГІГ Г°ГІГ®ГўГ Гї Г«Г®ГЈГЁГЄГ  Г¤Г«Гї Г¤Г®Г¦Г¤Гї Г­Г  Г±ГЇГ ГўГ­ГҐ.
     {
         RainProcent = UnityEngine.Random.Range(10, 100);
         if(RainProcent > RainGuarant)
@@ -211,7 +211,7 @@ public class WeatherSystem : MonoBehaviour
             RainDuration = UnityEngine.Random.Range(1, 3);
         }
     }
-    void RainLogic() //тут пошел лютейший замес с логикой дождя. условия простые - если время совпадает и дождь не идет = начало ливня. Также и наоборот.
+    void RainLogic() //ГІГіГІ ГЇГ®ГёГҐГ« Г«ГѕГІГҐГ©ГёГЁГ© Г§Г Г¬ГҐГ± Г± Г«Г®ГЈГЁГЄГ®Г© Г¤Г®Г¦Г¤Гї. ГіГ±Г«Г®ГўГЁГї ГЇГ°Г®Г±ГІГ»ГҐ - ГҐГ±Г«ГЁ ГўГ°ГҐГ¬Гї Г±Г®ГўГЇГ Г¤Г ГҐГІ ГЁ Г¤Г®Г¦Г¤Гј Г­ГҐ ГЁГ¤ГҐГІ = Г­Г Г·Г Г«Г® Г«ГЁГўГ­Гї. Г’Г ГЄГ¦ГҐ ГЁ Г­Г Г®ГЎГ®Г°Г®ГІ.
     {
         _rainobject.transform.rotation = Quaternion.identity;
 
@@ -219,7 +219,7 @@ public class WeatherSystem : MonoBehaviour
         {
             if(!rain)
             {
-                _rainobject.GetComponent<ParticleSystem>().Play(); //запускаем наш ливень
+                _rainobject.GetComponent<ParticleSystem>().Play(); //Г§Г ГЇГіГ±ГЄГ ГҐГ¬ Г­Г Гё Г«ГЁГўГҐГ­Гј
                 _rainobject.GetComponentInChildren<ParticleSystem>().Play();
                 _rainobject.GetComponent<AudioSource>().Play();
                 startraintime = hours;
@@ -232,7 +232,7 @@ public class WeatherSystem : MonoBehaviour
         {
             if(rain)
             {
-                _rainobject.GetComponent<ParticleSystem>().Stop();//останавливаем наш ливень
+                _rainobject.GetComponent<ParticleSystem>().Stop();//Г®Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г­Г Гё Г«ГЁГўГҐГ­Гј
                 _rainobject.GetComponent<AudioSource>().Stop();
                 _rainobject.GetComponentInChildren<ParticleSystem>().Stop();
                 rain = false;
