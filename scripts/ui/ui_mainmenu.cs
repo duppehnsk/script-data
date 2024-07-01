@@ -34,6 +34,11 @@ public class ui_mainmenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FirstStartInit();
+    }
+
+    void FirstStartInit()
+    {
         if (PlayerPrefs.GetInt("load1") == 0)
         {
             PlayerPrefs.SetFloat("DistanceView", 200f); //устанавливаем дальность прорисовки по умолчанию
@@ -45,7 +50,7 @@ public class ui_mainmenu : MonoBehaviour
             PlayerPrefs.SetInt("Render", 0);//устанавливаем тип рендера минимальный (ПОКА НЕРЕАЛИЗОВАНО)
             PlayerPrefs.SetInt("Resolution", 0);//устанавливаем разрешение экрана минимальное
             PlayerPrefs.SetInt("Quality", 0);//устанавливаем качество графики минимальное
-            PlayerPrefs.SetInt("load1", 1); //?
+            PlayerPrefs.SetInt("load1", 1); //устанавливаем переменную первого запуска в положение, что была проведена инициализация
             //PlayerPrefs.SetFloat("TimeSpeed",1);
             //PlayerPrefs.SetFloat("brightnessFonarik",1);
             PlayerPrefs.SetFloat("TControl",0); //устанавливаем тип управления по умолчанию на сенсор
@@ -188,7 +193,7 @@ void UpdateUI()
         Loading.SetActive(true);
         loadstat.fillAmount = 0f;
         //LoadingScreen = SceneManager.LoadSceneAsync("deadcity_sa2_map"); 
-        LoadingScreen = SceneManager.LoadSceneAsync("00_cs_tir"); 
+        LoadingScreen = SceneManager.LoadSceneAsync("testlogic"); 
         LoadingScreen.allowSceneActivation = false;
     }
 

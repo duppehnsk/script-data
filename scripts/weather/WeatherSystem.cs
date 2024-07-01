@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//WeatherSystem 1.0 by whonax
+
 public class WeatherSystem : MonoBehaviour
 {
     [Header("Time")]
@@ -12,31 +14,36 @@ public class WeatherSystem : MonoBehaviour
     [HideInInspector]
     public float seconds;
     public float time_speed = 1;
+    [Tooltip("Текст на Canvas чтобы время видеть")]
     public Text Time_Text;
 
 
     [Header("WeatherController")]
+    [Tooltip("Конфиги погод")]
     public WeatherStateCreator[] weatherStates;
+    [Tooltip("Сюда кинь Directional light")]
     public Light _sun;
     private int randomstate;
     public bool[] hours_weather_event;
-    public Material skyboxMaterial;
-    public float blendSpeedShader;
+    public float blendSpeedShader = 15f;
     private float blendAmount = 0f;
 
     [Header("RainController")]
     public GameObject _rainobject;
     private int RainGuarant = 50; // шанс гарантированного дождя по умолчанию
     public int RainProcent; //каков шанс дождя при рандоме используется для уравнения с rainguarant;
+    [Tooltip("Сколько будет идти дождь")]
     public int RainDuration; // продолжительность дождика
     private int RainDuration_backup; // резервная переменная, для нормальной работы таймеров
+    
 
+    [Tooltip("Во сколько начнется дождь")]
     public int startrainhour;
     private int startraintime;
 
     [Header("Events")]
     public bool rain;
-    public bool thunderbolt;
+    private bool thunderbolt;
 
     void Start()
     {
@@ -56,15 +63,14 @@ public class WeatherSystem : MonoBehaviour
     }
     void StartWeatherSystem() //при старте мира - подгружаем и подставляем скайбоксы, цвета эмбиента, тумана, солнца соответствующие установленному времени
     {
-
         randomstate = UnityEngine.Random.Range(0, weatherStates.Length);// вытаскиваем случайную погоду
         var newcubemap1 = weatherStates[randomstate].WeatherState[hours].Cubemap_tex;
         var newcubemap2 = weatherStates[randomstate].WeatherState[hours+1].Cubemap_tex;
         var suncolorstart = new Color((weatherStates[randomstate].WeatherState[hours].SunColor.x), (weatherStates[randomstate].WeatherState[hours].SunColor.y), (weatherStates[randomstate].WeatherState[hours].SunColor.z));
         var fogcolorstart = new Color((weatherStates[randomstate].WeatherState[hours].fog_color.x), (weatherStates[randomstate].WeatherState[hours].fog_color.y), (weatherStates[randomstate].WeatherState[hours].fog_color.z));
         var ambientcolotart = new Color((weatherStates[randomstate].WeatherState[hours].ambientColor.x), (weatherStates[randomstate].WeatherState[hours].ambientColor.y), (weatherStates[randomstate].WeatherState[hours].ambientColor.z));
-        skyboxMaterial.SetTexture("_MainTex", newcubemap1);
-        skyboxMaterial.SetTexture("_BlendTex", newcubemap2);
+        RenderSettings.skybox.SetTexture("_MainTex", newcubemap1);
+        RenderSettings.skybox.SetTexture("_BlendTex", newcubemap2);
         hours_weather_event[hours] = true;
         RenderSettings.fogDensity = 0.009f;
         RenderSettings.ambientSkyColor = ambientcolotart;
@@ -95,7 +101,7 @@ public class WeatherSystem : MonoBehaviour
         Color startColorSun = _sun.color;
         Color startColorFog = RenderSettings.fogColor;
         Color startAmbientColor = RenderSettings.ambientSkyColor;
-        Color startColorSky = skyboxMaterial.GetColor("_Tint");
+        Color startColorSky = RenderSettings.skybox.GetColor("_Tint");
         float elapsedTime = 0f;
         Color targetColorSun = new Color((weatherStates[randomstate].WeatherState[hours].SunColor.x), (weatherStates[randomstate].WeatherState[hours].SunColor.y), (weatherStates[randomstate].WeatherState[hours].SunColor.z));
         Color targetColorFog = new Color((weatherStates[randomstate].WeatherState[hours].fog_color.x), (weatherStates[randomstate].WeatherState[hours].fog_color.y), (weatherStates[randomstate].WeatherState[hours].fog_color.z));
@@ -112,7 +118,7 @@ public class WeatherSystem : MonoBehaviour
             _sun.color = currentColorSun;
             RenderSettings.fogColor = currentColorFog;
             RenderSettings.ambientSkyColor = currentColorAmbient;
-            skyboxMaterial.SetColor("_Tint", currentColorSky);
+            RenderSettings.skybox.SetColor("_Tint", currentColorSky);
             // Увеличить прошедшее время
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -123,7 +129,7 @@ public class WeatherSystem : MonoBehaviour
         RenderSettings.fogColor = targetColorFog;
         RenderSettings.fogDensity = 0.009f;
         RenderSettings.ambientSkyColor = targetColorAmbient;
-        skyboxMaterial.SetColor("_Tint", targetColorSky);
+        RenderSettings.skybox.SetColor("_Tint", targetColorSky);
     }
 
     IEnumerator BlendSkybox() //крч тут расчеты пошли по отношению скорости смешивания
@@ -135,22 +141,22 @@ public class WeatherSystem : MonoBehaviour
         while (elapsedTime < blendSpeedShader)
         {
             blendAmount = Mathf.Lerp(startBlendAmount, targetBlendAmount, elapsedTime / blendSpeedShader);
-            skyboxMaterial.SetFloat("_BlendAmount", blendAmount);
+            RenderSettings.skybox.SetFloat("_BlendAmount", blendAmount);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         blendAmount = targetBlendAmount;
-        skyboxMaterial.SetFloat("_BlendAmount", blendAmount);
+        RenderSettings.skybox.SetFloat("_BlendAmount", blendAmount);
 
-        skyboxMaterial.SetTexture("_MainTex", weatherStates[randomstate].WeatherState[hours].Cubemap_tex); //заменили кубмапу которую получили в слот основной текстуры, чтобы не допустить скачка напряжения в небе
+        RenderSettings.skybox.SetTexture("_MainTex", weatherStates[randomstate].WeatherState[hours].Cubemap_tex); //заменили кубмапу которую получили в слот основной текстуры, чтобы не допустить скачка напряжения в небе
         blendAmount = 0f;//обнулили для дальнейшего бленда
-        skyboxMaterial.SetFloat("_BlendAmount", blendAmount);
-        skyboxMaterial.SetTexture("_BlendTex", weatherStates[randomstate].WeatherState[hours+1].Cubemap_tex); //подготовили новую текстуру неба для бленда
+        RenderSettings.skybox.SetFloat("_BlendAmount", blendAmount);
+        RenderSettings.skybox.SetTexture("_BlendTex", weatherStates[randomstate].WeatherState[hours+1].Cubemap_tex); //подготовили новую текстуру неба для бленда
     }
 
     void UpdateSkyboxBlend()
     {
-        skyboxMaterial.SetFloat("_BlendAmount", blendAmount);//просто обновляем параметр
+        RenderSettings.skybox.SetFloat("_BlendAmount", blendAmount);//просто обновляем параметр
     }
     void TimeManager()
     {
@@ -196,10 +202,14 @@ public class WeatherSystem : MonoBehaviour
                 Time_Text.text = hours + ":" + "0" + minutes;
         }
     }
-    void NextDay()
+    void NextDay()// Код для начала нового дня
     {
         PredRainLogic();
-        // Код для начала нового дня
+        for (int i = 0; i < hours_weather_event.Length; i++)
+        {
+            hours_weather_event[i] = false;
+        }
+        
     }
 
     void PredRainLogic()// стартовая логика для дождя на спавне.

@@ -1,4 +1,4 @@
-Shader "Custom/terrain_escape" {
+Shader "X-Ray/TerrainShader2.0" {
     Properties{
             _MainTex("Base (RGB)", 2D) = "white" {}
             _MaskTex("Mask (RGB)", 2D) = "red" {}

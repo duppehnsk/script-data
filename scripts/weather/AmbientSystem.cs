@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AmbientSystem : MonoBehaviour
 {
+    [Header("WeatherSystem Component")]
+    public WeatherSystem _weathersystem;
+
+     [Header("Ambient System")]
     public AudioClip[] AmbientRandom;
     public GameObject[] AmbientObjects;
     // Start is called before the first frame update

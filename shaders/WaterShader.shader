@@ -1,49 +1,53 @@
-Shader "X-Ray/WaterShader" {
+Shader "X-Ray/WaterShader"
+{
     Properties {
-        _Color ("Color", Color) = (1,1,1,1)
-        _Glossiness ("Glossiness", Range(0, 1)) = 0.5
-        _ReflectionTex ("Reflection Texture", 2D) = "white" {}
-        _RefractionTex ("Refraction Texture", 2D) = "white" {}
-        _NormalMap ("Normal Map", 2D) = "bump" {}
-        _WaveSpeed ("Wave Speed", Range(0, 10)) = 1
+        _MainTex ("Main Texture", 2D) = "white" {}
+        _NormalMaps ("Normal Maps", 2D) = "" {}
+        _AtlasSize ("Atlas Size", Vector) = (1, 1, 0, 0)
+        _DistortionStrength ("Distortion Strength", Range(0.0, 1.0)) = 0.1
+        _Speed ("Speed", Range(0.0, 10.0)) = 1.0
+        _Scale ("Scale", Range(0.0, 10.0)) = 1.0
+        _Alpha ("Alpha", Range(0.0, 1.0)) = 1.0
     }
+
+    //Blend SrcAlpha OneMinusSrcAlpha
+
     SubShader {
-        Tags {"Queue"="Transparent" "RenderType"="Transparent"}
-        LOD 200
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 
         CGPROGRAM
-        #pragma surface surf Lambert alpha
+        #pragma surface surf Lambert
 
-        sampler2D _ReflectionTex;
-        sampler2D _RefractionTex;
-        sampler2D _NormalMap;
-        fixed4 _Color;
-        half _Glossiness;
-        half _WaveSpeed;
+        sampler2D _MainTex;
+        sampler2D _NormalMaps;
+        float4 _AtlasSize;
+        float _DistortionStrength;
+        float _Speed;
+        float _Scale;
+        float _Alpha;
 
         struct Input {
-            float2 uv_ReflectionTex;
-            float2 uv_RefractionTex;
-            float2 uv_NormalMap;
+            float2 uv_MainTex;
         };
 
         void surf(Input IN, inout SurfaceOutput o) {
-            fixed4 reflTex = tex2D(_ReflectionTex, IN.uv_ReflectionTex);
-            fixed4 refrTex = tex2D(_RefractionTex, IN.uv_RefractionTex);
-            fixed3 normalMap = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
-            
-            // Simulate water waves using time and UV coordinates
-            float waveFactor = sin(_WaveSpeed * _Time.y + IN.uv_RefractionTex.x * 10);
-            
-            // Combine reflection and refraction colors
-            fixed4 color = lerp(reflTex, refrTex, waveFactor);
-            
-            o.Albedo = color.rgb * _Color.rgb;
-            o.Alpha = color.a * _Color.a;
-            o.Specular = _Glossiness;
-            o.Normal = normalMap;
+            float2 uv = IN.uv_MainTex * _Scale;
+            float2 offset = float2(
+                sin(_Time.y * _Speed + uv.x) * _DistortionStrength,
+                cos(_Time.y * _Speed + uv.y) * _DistortionStrength
+            );
+
+            float4 texColor = tex2D(_MainTex, IN.uv_MainTex + offset);
+
+            float2 atlasUV = float2(IN.uv_MainTex.x * _AtlasSize.x + offset.x, IN.uv_MainTex.y * _AtlasSize.y + offset.y);
+            float3 normal = UnpackNormal(tex2D(_NormalMaps, atlasUV));
+
+            o.Normal = normal;
+            o.Albedo = texColor.rgb;
+            o.Alpha = texColor.a * _Alpha;
         }
         ENDCG
     }
+
     FallBack "Diffuse"
 }

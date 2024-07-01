@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wm_l1
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: terrain_military
+  m_Shader: {fileID: 4800000, guid: 26cc37e3e2a3ae44ca82f9bf307d6222, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -35,12 +35,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DetailedAsphaltTex:
+        m_Texture: {fileID: 2800000, guid: 44c5eb4a02e4a2c498e84f5108cdc99c, type: 3}
+        m_Scale: {x: 128, y: 128}
+        m_Offset: {x: 0, y: 0}
+    - _DetailedDirtTex:
+        m_Texture: {fileID: 2800000, guid: a65b9bb814059394d8a925c7bb99ac6a, type: 3}
+        m_Scale: {x: 128, y: 128}
+        m_Offset: {x: 0, y: 0}
+    - _DetailedGrassTex:
+        m_Texture: {fileID: 2800000, guid: 27a6522bd80696942bbca947075f7e76, type: 3}
+        m_Scale: {x: 128, y: 128}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8b2d1d8a0aa01934fb3709288e6dbc1c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 362a85bfa8179b944b98c683a55be517, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
